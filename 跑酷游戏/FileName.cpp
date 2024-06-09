@@ -5,6 +5,7 @@ using namespace std;
 #define WIN_WIDTH 1012
 #define WIN_HEIGHT 396
 #define OBSTACLE_COUNT 10
+int heroIndexkeep = 0;
 int initspeed=1;
 int herospeed = 1;
 int win_score = 10;
@@ -325,7 +326,13 @@ void FileName::fly()
 	}
 	else
 	{
-		heroIndex = (heroIndex + 1) % 12;
+		if (heroIndexkeep == 1)
+		{
+			heroIndex = (heroIndex + 1) % 12;
+			heroIndexkeep = 0;
+	
+		}
+		else{ heroIndexkeep++; }
 	}
 
 
